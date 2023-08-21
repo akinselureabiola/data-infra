@@ -5,3 +5,6 @@ variable "team" {
 variable "environment" {
   default = "staging"
 }
+variable "skip_final_snapshot" {
+  default = "true"
+}

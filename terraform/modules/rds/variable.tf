@@ -1,0 +1,10 @@
+variable "engine" {}
+variable "db_name" {}
+variable "engine_version" {}
+variable "username" {}
+variable "instance_class" {}
+variable "allocated_storage" {}
+variable "skip_final_snapshot" {}
+variable "port" {}
+variable "password" {}
+variable "identifier" {}
