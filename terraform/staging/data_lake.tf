@@ -15,7 +15,7 @@ module "airflow_extraction" {
 
 module "airbyte_extraction" {
     source               = "../modules/s3/"
-    bucket_name          = "data-production-airbyte"
+    bucket_name          = "data-production-airbyte-extraction"
     team                 = var.team
     environment          = var.environment
 }
