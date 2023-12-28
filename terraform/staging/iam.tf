@@ -42,3 +42,23 @@ resource "aws_iam_user_policy_attachment" "airflow_policy_attachment" {
   policy_arn = aws_iam_policy.airflow_policy.arn
 }
 
+
+
+
+data "aws_iam_policy_document" "rds_import_policy_document" {
+  statement {
+    effect = "Allow"
+    actions   = [
+        "s3:ListAllMyBuckets",
+        "s3:GetBucketLocation",
+        "s3:GetObject"
+        ]
+    resources = ["arn:aws:s3:::staging-olist"]
+  }
+}
+
+resource "aws_iam_policy" "rds_policy" {
+  name        = "rds-test-policy"
+  policy = data.aws_iam_policy_document.rds_import_policy_document.json
+}
+
