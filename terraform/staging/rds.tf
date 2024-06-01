@@ -15,7 +15,7 @@ module "postgres_db" {
     db_name                 = "main"
     identifier              = "postgres"
     allocated_storage       = "20"
-    engine                   = "postgresql"
+    engine                   = "postgres"
     engine_version           = "14"
     instance_class           = "db.t3.micro"
     username                 = "staging_db"
