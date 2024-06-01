@@ -20,3 +20,9 @@ module "airbyte_extraction" {
     environment          = var.environment
 }
 
+module "faker_data_extraction" {
+    source               = "../modules/s3/"
+    bucket_name          = "faker-dataset"
+    team                 = var.team
+    environment          = var.environment
+}

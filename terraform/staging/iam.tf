@@ -42,9 +42,6 @@ resource "aws_iam_user_policy_attachment" "airflow_policy_attachment" {
   policy_arn = aws_iam_policy.airflow_policy.arn
 }
 
-
-
-
 data "aws_iam_policy_document" "rds_import_policy_document" {
   statement {
     effect = "Allow"
@@ -62,3 +59,6 @@ resource "aws_iam_policy" "rds_policy" {
   policy = data.aws_iam_policy_document.rds_import_policy_document.json
 }
 
+ resource "aws_iam_user" "airbyte_user" {
+  name = "airbyte"
+}
